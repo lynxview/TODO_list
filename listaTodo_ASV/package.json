@@ -1,0 +1,37 @@
+{
+  "name": "loopback-example-database",
+  "version": "2.0.0",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node .",
+    "lint": "eslint .",
+    "test": "tape test/*.js",
+    "posttest": "npm run lint",
+    "build:sdk": "./node_modules/.bin/lb-sdk server/server client/src/app/shared/sdk -d ng2web -i enabled"
+  },
+  "dependencies": {
+    "@angular/http": "^4.0.2",
+    "@mean-expert/loopback-component-realtime": "^1.0.0-rc.4",
+    "@mean-expert/loopback-sdk-builder": "^2.1.0-rc.9",
+    "compression": "^1.0.3",
+    "cors": "^2.8.1",
+    "loopback": "^3.0.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^2.1.0",
+    "loopback-connector-mongodb": "^1.13.0",
+    "serve-favicon": "^2.0.1",
+    "socket.io-client": "^1.7.3",
+    "strong-error-handler": "^1.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^2.7.0",
+    "eslint-config-loopback": "^1.0.0",
+    "tape": "^4.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/strongloop/loopback-example-database"
+  },
+  "description": "loopback-example-database",
+  "license": "MIT"
+}

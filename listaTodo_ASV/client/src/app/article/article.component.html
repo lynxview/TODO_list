@@ -1,0 +1,62 @@
+<!--  <hr class="tachado" *ngIf="article.selected">-->
+  <td>
+      <div class="checkbox ">
+        <label>
+          <input type="checkbox"
+           role="button"
+           [(ngModel)]="article.selected"
+           (click)="articleClick($event)"
+           >
+        </label>
+      </div>
+</td>
+<td>
+      <div class="checkbox" *ngIf="!article.editando">
+        <span>
+          {{article.nombre}}
+        </span>
+      </div>
+      <div class="checkbox" *ngIf="article.editando">
+        <span>
+          <input type="text" class="form-control" (keyup)="onKey($event,'nombre')" name="" >
+        </span>
+      </div>
+</td>
+<td>
+      <div class="checkbox" *ngIf="!article.editando">
+        <span>
+          {{article.valor}} $
+        </span>
+      </div>
+      <div class="checkbox" *ngIf="article.editando">
+        <span>
+          <input type="text" class="form-control" name=""  (keyup)="onKey($event,'valor')">
+        </span>
+      </div>
+</td>
+<td>
+      <div class="checkbox" *ngIf="!article.editando">
+        <span class="glyphicon glyphicon-edit"
+              role="button"
+              (click)="setEditMode(true)"
+              >
+        </span>
+        <span class="glyphicon glyphicon-trash"
+              role="button"
+              (click)="deleteElement(article)"
+              >
+        </span>
+      </div>
+      <div class="checkbox" *ngIf="article.editando">
+        <span class="glyphicon glyphicon-share-alt"
+              role="button"
+              (click)="setEditMode(false)"
+              >
+        </span>
+        <span class="glyphicon glyphicon-floppy-save"
+              role="button"
+              (click)="editElement(article)"
+              >
+        </span>
+      </div>
+</td>

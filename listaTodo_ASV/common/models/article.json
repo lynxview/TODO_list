@@ -1,0 +1,38 @@
+{
+  "name": "Article",
+  "plural": "articles",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "valor": {
+      "type": "number",
+      "required": true
+    },
+    "votes": {
+      "type": "number"
+    },
+    "selected": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "editando": {
+      "type": "boolean",
+      "default": false
+    },
+    "amount": {
+      "type": "object"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

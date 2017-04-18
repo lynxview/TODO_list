@@ -1,0 +1,32 @@
+<div class="well">
+  <table class="table table-striped">
+      <thead>
+        <tr class="">
+          <th>
+                #
+          </th>
+          <th>
+                Nombre
+          </th>
+          <th>
+                Valor
+          </th>
+          <th>
+                Opciones
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr app-article
+          [ngClass]="{'row-selected':article.selected}"
+          *ngFor="let article of articlesList"
+          [article]="article"
+          (onArticleSelected)="articleWasSelected($event);"
+          (onArticleUpdated)="articleWasUpdated($event);"
+          (onArticleDeleted)="articleWasDeleted($event);"
+          class="relative"
+          >
+        </tr >
+      </tbody>
+  </table>
+</div>

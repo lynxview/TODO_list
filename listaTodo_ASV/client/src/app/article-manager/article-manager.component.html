@@ -1,0 +1,52 @@
+<div class="article-manager">
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-7">
+      <app-formulario-control
+        (onArticleAdded)="agregarArticulo($event);"
+      ></app-formulario-control>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-todo-list
+      [articlesList]="articles"
+      (onArticleSelected)="triggerEvento($event);"
+      (onArticleDeleted)="deleteElement($event);"
+      (onArticleUpdated)="updateElement($event);"
+      >
+      </app-todo-list>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="well">
+        <div class="row">
+          <div class="col-xs-6">
+            Total {{total}} $
+          </div>
+          <div class="col-xs-6">
+            <div class="row">
+              <div class="col-xs-12">
+                <button  class="btn btn-default pull-right"
+                         type="button"
+                         name="button"
+                        (click)="marcarTodos(true)"
+                         >
+                  MarcarTodos
+                </button>
+                <button  class="btn btn-default pull-right"
+                         type="button"
+                         name="button"
+                        (click)="marcarTodos(false)"
+                         >
+                  DesmarcarTodos
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
